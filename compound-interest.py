@@ -28,7 +28,7 @@ initial_principal = st.sidebar.number_input("Initial Investment ($)", value=1000
 monthly_contribution = st.sidebar.number_input("Monthly Contribution ($)", value=200, step=10)
 risk_free_rate = 7  # Assume 7% annual return
 
-years = st.sidebar.slider("Investment Duration (Years)", 1, 60, 30)
+years = st.sidebar.slider("Investment Duration (Years)", 1, 50, 30)
 
 total_values = compound_interest(initial_principal, monthly_contribution, risk_free_rate, years)
 simple_savings_values_list = simple_savings_values(initial_principal, monthly_contribution, years)
@@ -49,3 +49,7 @@ ax.set_ylabel("Total Value ($)")
 ax.set_title("The Power of Compound Interest")
 ax.legend()
 st.pyplot(fig)
+
+st.markdown("""
+**Disclaimer:** This calculator is for informational purposes only and is based on assumed annual stock market returns of 7% with monthly compounding. Actual returns may vary due to market fluctuations, fees, inflation, and other factors. This is not financial advice—please consult a financial professional before making investment decisions.
+""")
