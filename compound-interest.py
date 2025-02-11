@@ -28,7 +28,7 @@ initial_principal = st.sidebar.number_input("Initial Investment ($)", value=1000
 monthly_contribution = st.sidebar.number_input("Monthly Contribution ($)", value=200, step=10)
 risk_free_rate = 7  # Assume 7% annual return
 
-years = st.sidebar.slider("Investment Duration (Years)", 1, 100, 30)
+years = st.sidebar.slider("Investment Duration (Years)", 1, 60, 30)
 
 total_values = compound_interest(initial_principal, monthly_contribution, risk_free_rate, years)
 simple_savings_values_list = simple_savings_values(initial_principal, monthly_contribution, years)
