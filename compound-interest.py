@@ -21,7 +21,7 @@ def simple_savings_values(principal, monthly_contribution, years):
         values.append(principal + (monthly_contribution * 12 * year))
     return values
 
-st.sidebar.header("Investment Details")
+st.sidebar.header("Input your numbers here:")
 initial_principal = st.sidebar.number_input("Initial Investment ($)", value=1000, step=100)
 monthly_contribution = st.sidebar.number_input("Monthly Contribution ($)", value=200, step=10)
 risk_free_rate = 7  # Assume 7% annual return
