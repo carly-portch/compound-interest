@@ -21,7 +21,7 @@ def simple_savings_values(principal, monthly_contribution, years):
         values.append(principal + (monthly_contribution * 12 * year))
     return values
 
-st.title("Investment Compound Interest Calculator")
+st.title("Money Growth Calculator")
 
 st.sidebar.header("Investment Details")
 initial_principal = st.sidebar.number_input("Initial Investment ($)", value=1000, step=100)
