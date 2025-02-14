@@ -2,9 +2,6 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 
-[theme]
-primaryColor = "#FF9E70"  # Changes the slider's active progress color
-
 def compound_interest(principal, monthly_contribution, rate, years):
     rate = rate / 100 / 12  # Convert annual rate to monthly
     months = years * 12
@@ -23,6 +20,9 @@ def simple_savings_values(principal, monthly_contribution, years):
     for year in range(1, years + 1):
         values.append(principal + (monthly_contribution * 12 * year))
     return values
+
+[theme]
+primaryColor = "#FF9E70"  # Changes the slider's active progress color
 
 st.sidebar.header("Input your numbers here:")
 initial_principal = st.sidebar.number_input("Initial Investment ($)", value=1000, step=100)
