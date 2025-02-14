@@ -29,8 +29,8 @@ risk_free_rate = 7  # Assume 7% annual return
 st.markdown(
     """
     <style>
-        /* Change only the active slider bar color */
-        [data-baseweb="slider"] > div:nth-child(2) {
+        /* Target the active slider track */
+        [data-baseweb="slider"] > div:first-child {
             background-color: #FF9E70 !important;
         }
     </style>
