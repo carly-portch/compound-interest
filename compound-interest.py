@@ -29,15 +29,9 @@ risk_free_rate = 7  # Assume 7% annual return
 st.markdown(
     """
     <style>
-        /* Change slider bar color */
-        [data-baseweb="slider"] > div {
-            background: linear-gradient(to right, #682D24, #FF9E70);
-        }
-
-        /* Change the slider handle (thumb) color */
-        [data-baseweb="slider"] div[role="slider"] {
-            background-color: #FF9E70;
-            border: 2px solid #682D24;
+        /* Change only the active slider bar color */
+        [data-baseweb="slider"] > div:nth-child(2) {
+            background-color: #FF9E70 !important;
         }
     </style>
     """,
