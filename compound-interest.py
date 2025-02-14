@@ -11,7 +11,7 @@ if not os.path.exists(config_dir):
 with open(config_path, "w") as config_file:
     config_file.write("""
 [theme]
-primaryColor = "#233c64"
+primaryColor = "#f5724b"
 """)
 
 import streamlit as st
