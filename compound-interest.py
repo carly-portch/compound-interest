@@ -26,7 +26,25 @@ initial_principal = st.sidebar.number_input("Initial Investment ($)", value=1000
 monthly_contribution = st.sidebar.number_input("Monthly Contribution ($)", value=200, step=10)
 risk_free_rate = 7  # Assume 7% annual return
 
-years = st.sidebar.slider("Investment Duration (Years)", 1, 50, 30, color="#FF9E70")
+st.markdown(
+    """
+    <style>
+        /* Change slider bar color */
+        [data-baseweb="slider"] > div {
+            background: linear-gradient(to right, #682D24, #FF9E70);
+        }
+
+        /* Change the slider handle (thumb) color */
+        [data-baseweb="slider"] div[role="slider"] {
+            background-color: #FF9E70;
+            border: 2px solid #682D24;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+years = st.sidebar.slider("Investment Duration (Years)", 1, 50, 30)
 
 total_values = compound_interest(initial_principal, monthly_contribution, risk_free_rate, years)
 simple_savings_values_list = simple_savings_values(initial_principal, monthly_contribution, years)
