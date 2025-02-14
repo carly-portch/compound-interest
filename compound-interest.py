@@ -26,7 +26,7 @@ initial_principal = st.sidebar.number_input("Initial Investment ($)", value=1000
 monthly_contribution = st.sidebar.number_input("Monthly Contribution ($)", value=200, step=10)
 risk_free_rate = 7  # Assume 7% annual return
 
-years = st.sidebar.slider("Investment Duration (Years)", 1, 50, 30)
+years = st.sidebar.slider("Investment Duration (Years)", 1, 50, 30, color="#FF9E70")
 
 total_values = compound_interest(initial_principal, monthly_contribution, risk_free_rate, years)
 simple_savings_values_list = simple_savings_values(initial_principal, monthly_contribution, years)
@@ -40,8 +40,8 @@ st.subheader(f"After {years} years, your investment would be worth: ${final_valu
 st.subheader(f"If you saved without investing, you would have: ${no_investment_value:,.2f}")
 
 fig, ax = plt.subplots()
-ax.plot(years_range, total_values, label="Investment Growth", linestyle="-", marker="o", color="#FF9E70")
-ax.plot(years_range, simple_savings_values_list, label="Savings Without Investment", linestyle="--", marker="s", color="#682D24")
+ax.plot(years_range, total_values, label="Investment Growth", linestyle="-", marker="o", color="#682D24")
+ax.plot(years_range, simple_savings_values_list, label="Savings Without Investment", linestyle="--", marker="s", color="#FF9E70")
 ax.set_xlabel("Years")
 ax.set_ylabel("Total Value ($)")
 ax.set_title("The Power of Compound Interest")
