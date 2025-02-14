@@ -1,3 +1,19 @@
+import os
+
+# Create the .streamlit directory if it doesn't exist
+config_dir = ".streamlit"
+config_path = os.path.join(config_dir, "config.toml")
+
+if not os.path.exists(config_dir):
+    os.makedirs(config_dir)
+
+# Write the theme settings into config.toml
+with open(config_path, "w") as config_file:
+    config_file.write("""
+[theme]
+primaryColor = "#FF9E70"
+""")
+
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
@@ -20,9 +36,6 @@ def simple_savings_values(principal, monthly_contribution, years):
     for year in range(1, years + 1):
         values.append(principal + (monthly_contribution * 12 * year))
     return values
-
-[theme]
-primaryColor = "#FF9E70"  # Changes the slider's active progress color
 
 st.sidebar.header("Input your numbers here:")
 initial_principal = st.sidebar.number_input("Initial Investment ($)", value=1000, step=100)
