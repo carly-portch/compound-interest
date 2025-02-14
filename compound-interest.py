@@ -40,8 +40,8 @@ st.subheader(f"After {years} years, your investment would be worth: ${final_valu
 st.subheader(f"If you saved without investing, you would have: ${no_investment_value:,.2f}")
 
 fig, ax = plt.subplots()
-ax.plot(years_range, total_values, label="Investment Growth", linestyle="-", marker="o", color='#FF9E70")
-ax.plot(years_range, simple_savings_values_list, label="Savings Without Investment", linestyle="--", marker="s", color='#682D24')
+ax.plot(years_range, total_values, label="Investment Growth", linestyle="-", marker="o", color="#FF9E70")
+ax.plot(years_range, simple_savings_values_list, label="Savings Without Investment", linestyle="--", marker="s", color="#682D24")
 ax.set_xlabel("Years")
 ax.set_ylabel("Total Value ($)")
 ax.set_title("The Power of Compound Interest")
